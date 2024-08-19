@@ -11,17 +11,23 @@ import UIKit
 class LoginViewController: UIViewController {
     
     
+
     @IBOutlet weak var cardview: UIView!
     
     @IBOutlet weak var userView: UIView!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBAction func forgetPasswordButton(_ sender: Any) {
+    }
+    @IBAction func createAccountButton(_ sender: Any) {
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // MARKS -Adding shadow to card-
         shadowadding()
@@ -31,7 +37,7 @@ class LoginViewController: UIViewController {
         
         // MARKS -Adding the label text for password and user Name-
         addinglabel()
-            
+        
         // MARKS -Adding border to text field-
         addBorder()
         
@@ -52,20 +58,47 @@ class LoginViewController: UIViewController {
     func placeholderadding(){
         userNameTextField.placeholder = "Type your Name"
         passwordTextField.placeholder = "Type your password"
+        passwordTextField.isSecureTextEntry = true
         
     }
     
     func addinglabel(){
-        let userLabel = UILabel(frame: CGRect(x: 30, y: -10, width: 70, height: 20))
+        let userLabel = UILabel()
         userLabel.text = "User Name"
-        userLabel.font = UIFont.systemFont(ofSize: 12)
-        userView.addSubview(userLabel)
+        userLabel.font = UIFont.systemFont(ofSize: 15)
+        cardview.addSubview(userLabel)
+        userLabel.backgroundColor = UIColor.white
+        userLabel.textAlignment = .center
+        userLabel.layer.zPosition = 1
+        
+        
+        // Constraints
+        userLabel.translatesAutoresizingMaskIntoConstraints = false
+        userLabel.centerYAnchor.constraint(equalTo: userView.topAnchor).isActive = true
+        userLabel.leadingAnchor.constraint(equalTo: userView.leadingAnchor, constant: 32).isActive = true
+        userLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
+        userLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        
+        
+        
         
         // Add a label to the password view
-        let passwordLabel = UILabel(frame: CGRect(x: 30, y: -10, width: 70, height: 20))
+        let passwordLabel = UILabel()
         passwordLabel.text = "Password"
-        passwordLabel.font = UIFont.systemFont(ofSize: 12)
-        passwordView.addSubview(passwordLabel)
+        passwordLabel.font = UIFont.systemFont(ofSize: 15)
+        passwordLabel.backgroundColor = UIColor.white
+        passwordLabel.textAlignment = .center
+        cardview.addSubview(passwordLabel)
+        passwordLabel.layer.zPosition = 1
+        
+        // constraints
+        passwordLabel.translatesAutoresizingMaskIntoConstraints = false
+        passwordLabel.centerYAnchor.constraint(equalTo: passwordView.topAnchor).isActive = true
+        passwordLabel.leadingAnchor.constraint(equalTo: passwordView.leadingAnchor, constant: 33).isActive = true
+        passwordLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
+        passwordLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
     }
     
     private func addBorder() {
@@ -76,8 +109,8 @@ class LoginViewController: UIViewController {
             userNameTextField.heightAnchor.constraint(equalToConstant: 35) // Adjust the height as needed
         ])
         passwordTextField.layer.masksToBounds = true // Ensures the content is clipped to the rounded corners
-
-
+        
+        
         passwordView.layer.borderWidth = 1
         passwordView.layer.borderColor = UIColor.lightGray.cgColor
         passwordView.layer.cornerRadius = 5
@@ -85,7 +118,7 @@ class LoginViewController: UIViewController {
         NSLayoutConstraint.activate([
             passwordTextField.heightAnchor.constraint(equalToConstant: 35) // Adjust the height as needed
         ])
-
+        
     }
     
     
