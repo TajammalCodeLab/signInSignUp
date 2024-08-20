@@ -7,27 +7,44 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
-    
+class SignUpViewController: BaseViewController {
+    /// main card
     @IBOutlet weak var cardViewContainer: UIView!
-    
+    @IBOutlet weak var cardContainer: UIView!
+    /// text fields
     @IBOutlet weak var userEmailField: UITextField!
     @IBOutlet weak var userFullNameField: UITextField!
+    @IBOutlet weak var phoneNumberTxtField: UITextField!
+    @IBOutlet weak var conpNameTxtField: UITextField!
+    @IBOutlet weak var cityNameTxtField: UITextField!
+    @IBOutlet weak var addressTxtField: UITextField!
+    @IBOutlet weak var passwordTxtField: UITextField!
     
-    @IBOutlet weak var fullnameView: UIView!
     
-    @IBOutlet weak var emailView: UIView!
+    /// text field container
+    @IBOutlet weak var fullnameView: CustomTextField!
+    @IBOutlet weak var emailView: CustomTextField!
+    @IBOutlet weak var phoneNumberView: CustomTextField!
+    @IBOutlet weak var ccompNameView: CustomTextField!
+    @IBOutlet weak var cityNameView: CustomTextField!
+    @IBOutlet weak var addressView: CustomTextField!
+    @IBOutlet weak var passwordView: CustomTextField!
+    
+    
+    @IBOutlet weak var backtoLogin: UILabel!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let attributedString = NSAttributedString(string: "Login", attributes: [
+                .underlineStyle: NSUnderlineStyle.single.rawValue
+            ])
+            
+            // Assign the attributed string to the label
+            backtoLogin.attributedText = attributedString
         addingshadow()
-        
-        placeholderadding()
-        
-        addinglabel()
+        updateUI()
         
         
         
@@ -42,55 +59,30 @@ class SignUpViewController: UIViewController {
         cardViewContainer.layer.shadowOpacity = 0.5
         cardViewContainer.layer.shadowOffset = CGSize(width: 0, height: 1)
         cardViewContainer.layer.shadowRadius = 3
+        
+        
+        
+        
+        
+        
+        cardContainer.layer.cornerRadius = 10
+        cardContainer.layer.shadowColor = UIColor.black.cgColor
+        cardContainer.layer.shadowOpacity = 0.5
+        cardContainer.layer.shadowOffset = CGSize(width: 0, height: 1)
+        cardContainer.layer.shadowRadius = 3
         //cardview.layer.shadowPath = UIBezierPath(roundedRect: cardview.bounds, cornerRadius: cardview.layer.cornerRadius).cgPath
     }
-    func placeholderadding(){
-        userFullNameField.placeholder = "Type your Full Name"
-        userFullNameField.placeholder = "Type your Email"
-        //passwordTextField.isSecureTextEntry = true
+    private func updateUI(){
+        /// Initialize CustomTextField with the outlet text field
         
-    }
-    
-    
-    
-    
-    func addinglabel(){
-        let userLabel = UILabel()
-        userLabel.text = "User Name"
-        userLabel.font = UIFont.systemFont(ofSize: 15)
-        cardViewContainer.addSubview(userLabel)
-        userLabel.backgroundColor = UIColor.white
-        userLabel.textAlignment = .center
-        userLabel.layer.zPosition = 1
+        self.updateTextField(parentView: fullnameView, label: "Full Name", textField: userFullNameField)
+        self.updateTextField(parentView: emailView, label: "Email", textField: userEmailField)
+        self.updateTextField(parentView: phoneNumberView, label: "Phone Number", textField: phoneNumberTxtField)
+        self.updateTextField(parentView: ccompNameView, label: "Company Name", textField: conpNameTxtField)
+        self.updateTextField(parentView: cityNameView, label: "City", textField: cityNameTxtField)
+        self.updateTextField(parentView: addressView, label: "Address", textField: addressTxtField)
+        self.updateTextField(parentView: passwordView, label: "Password", textField: passwordTxtField)
         
-        
-        // Constraints
-        userLabel.translatesAutoresizingMaskIntoConstraints = false
-        userLabel.centerYAnchor.constraint(equalTo: fullnameView.topAnchor).isActive = true
-        userLabel.leadingAnchor.constraint(equalTo: fullnameView.leadingAnchor, constant: 32).isActive = true
-        userLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
-        userLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        
-        
-        
-        /*
-        // Add a label to the password view
-        let passwordLabel = UILabel()
-        passwordLabel.text = "Password"
-        passwordLabel.font = UIFont.systemFont(ofSize: 15)
-        passwordLabel.backgroundColor = UIColor.white
-        passwordLabel.textAlignment = .center
-        cardview.addSubview(passwordLabel)
-        passwordLabel.layer.zPosition = 1
-        
-        // constraints
-        passwordLabel.translatesAutoresizingMaskIntoConstraints = false
-        passwordLabel.centerYAnchor.constraint(equalTo: passwordView.topAnchor).isActive = true
-        passwordLabel.leadingAnchor.constraint(equalTo: passwordView.leadingAnchor, constant: 33).isActive = true
-        passwordLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
-        passwordLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-         */
     }
          
     

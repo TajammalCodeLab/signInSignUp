@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-/*
+
 extension UITextField {
     func setPadding(left: CGFloat? = nil, right: CGFloat? = nil){
         if let left = left {
@@ -38,4 +38,3 @@ extension UIView {
     
 }
 
-*/

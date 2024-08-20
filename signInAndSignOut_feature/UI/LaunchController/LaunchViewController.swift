@@ -17,14 +17,16 @@ class LaunchViewController: UIViewController {
             self.progressBarHandler.setProgress(0.0, animated: false)
             self.progressBarHandler.layer.sublayers?.forEach {$0.removeAllAnimations()}
             self.directToLoginScreen()
+            print("collected 1")
         }
     }
     private func directToLoginScreen(){
-        
+        print("collected 2")
         
         let loginVC = Storyboards.Main.instantiateViewController(withIdentifier: Identifiers.LOGIN_ID)
         loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true, completion: nil)
+        
         
         
         /*
