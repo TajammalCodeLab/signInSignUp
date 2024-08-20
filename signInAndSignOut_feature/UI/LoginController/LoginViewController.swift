@@ -39,7 +39,13 @@ class LoginViewController: BaseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool){
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
     private func updateUI(){
         self.updateTextField(parentView: userView, label: "Username", textField: userNameTextField)
         self.updateTextField(parentView: passwordView, label: "Password", textField: passwordTextField)

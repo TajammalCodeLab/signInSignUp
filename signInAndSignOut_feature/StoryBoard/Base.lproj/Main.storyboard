@@ -32,10 +32,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="fJR-zg-hn6">
                                 <rect key="frame" x="92" y="198" width="209" height="118"/>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-N4-Def">
-                                <rect key="frame" x="121" y="325" width="150" height="2.6666666666666856"/>
+                            <progressView opaque="NO" contentMode="left" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-N4-Def">
+                                <rect key="frame" x="121" y="326" width="150" height="2.6666666666666856"/>
                                 <color key="backgroundColor" systemColor="tableBackgroundColor"/>
-                                <color key="progressTintColor" red="0.1058823466" green="0.20000001789999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="progressTintColor" systemColor="tintColor"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore, Prepare, and Commence Your Umrah!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74R-YQ-RyJ">
                                 <rect key="frame" x="30" y="605.66666666666663" width="333" height="37"/>
@@ -56,7 +56,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cM6-N4-Def" secondAttribute="trailing" constant="122" id="VAn-sL-eJ9"/>
                             <constraint firstItem="W1t-P3-oCp" firstAttribute="top" secondItem="XcI-z8-IE4" secondAttribute="bottom" constant="30" id="YFd-JA-Hjj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="74R-YQ-RyJ" secondAttribute="trailing" constant="30" id="Yia-RZ-PQ6"/>
-                            <constraint firstItem="cM6-N4-Def" firstAttribute="top" secondItem="fJR-zg-hn6" secondAttribute="bottom" constant="9" id="cMj-V1-t8m"/>
+                            <constraint firstItem="cM6-N4-Def" firstAttribute="top" secondItem="fJR-zg-hn6" secondAttribute="bottom" constant="10" id="cMj-V1-t8m"/>
                             <constraint firstItem="W1t-P3-oCp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="m3E-xK-KAo"/>
                             <constraint firstItem="XcI-z8-IE4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nBO-qo-62d"/>
                             <constraint firstItem="XcI-z8-IE4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rns-VP-Dwb"/>
@@ -651,6 +651,9 @@
         </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
