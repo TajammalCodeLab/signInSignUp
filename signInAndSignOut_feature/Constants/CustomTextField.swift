@@ -85,8 +85,9 @@ class CustomTextField: UIView {
         self.label.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     // This required initializer is a boilerplate code that triggers a runtime error if the class is initialized from a storyboard or nib.
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
+        }
 }
 

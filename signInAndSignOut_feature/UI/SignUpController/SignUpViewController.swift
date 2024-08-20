@@ -44,7 +44,7 @@ class SignUpViewController: BaseViewController {
             // Assign the attributed string to the label
             backtoLogin.attributedText = attributedString
         addingshadow()
-        updateUI()
+       updateUI()
         
         
         
