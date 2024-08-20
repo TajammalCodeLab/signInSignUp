@@ -10,25 +10,18 @@ class LaunchViewController: UIViewController {
         startProgressBar()
     }
     
-    private func startProgressBar() {
-        // Reset the progress to 0 initially
-        progressBarHandler.setProgress(0.0, animated: false)
+    private func startProgressBar(){
+        
+        self.progressBarHandler.layer.sublayers?.forEach {$0.removeAllAnimations()}
+        progressBarHandler.setProgress(3.0, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            self.progressBarHandler.setProgress(0.0, animated: false)
+            self.progressBarHandler.layer.sublayers?.forEach {$0.removeAllAnimations()}
+            
+            self.directToLoginScreen()
 
-            // Clear any existing animations on the layer
-            self.progressBarHandler.layer.sublayers?.forEach { $0.removeAllAnimations() }
-
-            // Animate the progress to 1.0 over 3 seconds
-            UIView.animate(withDuration: 3.0, animations: {
-                self.progressBarHandler.setProgress(1.0, animated: true)
-            }) { _ in
-                // After 3 seconds, reset the progress to 0 and transition to the login screen
-                self.progressBarHandler.setProgress(0.0, animated: false)
-                self.directToLoginScreen()
-            }
+        }
     }
-
-    
-    
     override func viewWillAppear(_ animated: Bool){
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -52,7 +45,7 @@ class LaunchViewController: UIViewController {
         
         window.rootViewController = loginVC
         window.makeKeyAndVisible()
-        
+
         // Animate the transition
         UIView.transition(with: snapshot ?? UIView(), duration: 0.5, options: .transitionCrossDissolve, animations: {
             snapshot?.alpha = 0
@@ -63,16 +56,16 @@ class LaunchViewController: UIViewController {
         
         
         /* previus code
-         let loginVC = Storyboards.Main.instantiateViewController(withIdentifier: Identifiers.LOGIN_ID)
-         self.navigationController?.pushViewController(loginVC, animated: true)
-         */
+        let loginVC = Storyboards.Main.instantiateViewController(withIdentifier: Identifiers.LOGIN_ID)
+        self.navigationController?.pushViewController(loginVC, animated: true)
+        */
         
         
         
         /*
-         let SignUpVC = Storyboards.Main.instantiateViewController(withIdentifier: Identifiers.SIGNUP_ID)
-         SignUpVC.modalPresentationStyle = .fullScreen
-         present(SignUpVC, animated: true, completion: nil)*/
+        let SignUpVC = Storyboards.Main.instantiateViewController(withIdentifier: Identifiers.SIGNUP_ID)
+        SignUpVC.modalPresentationStyle = .fullScreen
+        present(SignUpVC, animated: true, completion: nil)*/
     }
 }
 
