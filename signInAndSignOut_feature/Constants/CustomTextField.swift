@@ -27,12 +27,14 @@ class CustomTextField: UIView {
     
     private let label: UILabel // label that shows over the border of field
     private var textField: UITextField! // Text field
+    private var isPassword: Bool
     
-    init(labelName: String, textField: UITextField) { // Initionalization function
+    init(labelName: String, textField: UITextField, isPassword: Bool) { // Initionalization function
         
         
-        
+        self.isPassword = isPassword
         self.label = PaddedLabel() // adding padding to the label
+        
         super.init(frame: .zero)
         self.textField = textField // self.textField means class variable
         // removing exiting border that applied by system on text field
@@ -65,7 +67,7 @@ class CustomTextField: UIView {
         self.textField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
         self.textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10).isActive = true
         self.textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 35).isActive = true
-        self.textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive = true
+        self.textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: isPassword ? -35 : -10).isActive = true
         
         
         

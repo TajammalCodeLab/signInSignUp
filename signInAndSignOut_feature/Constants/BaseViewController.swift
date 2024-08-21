@@ -14,9 +14,9 @@ class BaseViewController: UIViewController {
     }
 
     //MARK: - Methods
-    func updateTextField(parentView:CustomTextField, label: String, textField: UITextField){
+    func updateTextField(parentView:CustomTextField, label: String, textField: UITextField, isPassword: Bool){
         /// Initialize CustomTextField with the outlet text field
-        let customTextField = CustomTextField(labelName: label, textField: textField)
+        let customTextField = CustomTextField(labelName: label, textField: textField, isPassword: isPassword)
         
         parentView.addSubview(customTextField)
         /// Set constraints to ensure the custom text field fills the container

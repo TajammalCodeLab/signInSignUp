@@ -62,9 +62,6 @@ class SignUpViewController: BaseViewController {
         
         
         
-        
-        
-        
         cardContainer.layer.cornerRadius = 10
         cardContainer.layer.shadowColor = UIColor.black.cgColor
         cardContainer.layer.shadowOpacity = 0.5
@@ -75,13 +72,13 @@ class SignUpViewController: BaseViewController {
     private func updateUI(){
         /// Initialize CustomTextField with the outlet text field
         
-        self.updateTextField(parentView: fullnameView, label: "Full Name", textField: userFullNameField)
-        self.updateTextField(parentView: emailView, label: "Email", textField: userEmailField)
-        self.updateTextField(parentView: phoneNumberView, label: "Phone Number", textField: phoneNumberTxtField)
-        self.updateTextField(parentView: ccompNameView, label: "Company Name", textField: conpNameTxtField)
-        self.updateTextField(parentView: cityNameView, label: "City", textField: cityNameTxtField)
-        self.updateTextField(parentView: addressView, label: "Address", textField: addressTxtField)
-        self.updateTextField(parentView: passwordView, label: "Password", textField: passwordTxtField)
+        self.updateTextField(parentView: fullnameView, label: "Full Name", textField: userFullNameField, isPassword: false)
+        self.updateTextField(parentView: emailView, label: "Email", textField: userEmailField, isPassword: false)
+        self.updateTextField(parentView: phoneNumberView, label: "Phone Number", textField: phoneNumberTxtField, isPassword: false)
+        self.updateTextField(parentView: ccompNameView, label: "Company Name", textField: conpNameTxtField, isPassword: false)
+        self.updateTextField(parentView: cityNameView, label: "City", textField: cityNameTxtField, isPassword: false)
+        self.updateTextField(parentView: addressView, label: "Address", textField: addressTxtField, isPassword: false)
+        self.updateTextField(parentView: passwordView, label: "Password", textField: passwordTxtField, isPassword: true)
         
     }
          

@@ -17,7 +17,6 @@ class LaunchViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.progressBarHandler.setProgress(0.0, animated: false)
             self.progressBarHandler.layer.sublayers?.forEach {$0.removeAllAnimations()}
-            
             self.directToLoginScreen()
 
         }

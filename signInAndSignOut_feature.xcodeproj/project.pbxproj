@@ -29,6 +29,8 @@
 		1F817B792C6C89FE003020BB /* signInAndSignOut_featureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F817B782C6C89FE003020BB /* signInAndSignOut_featureTests.swift */; };
 		1F817B832C6C89FE003020BB /* signInAndSignOut_featureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F817B822C6C89FE003020BB /* signInAndSignOut_featureUITests.swift */; };
 		1F817B852C6C89FE003020BB /* signInAndSignOut_featureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F817B842C6C89FE003020BB /* signInAndSignOut_featureUITestsLaunchTests.swift */; };
+		1F8B2DA32C762FE200B5FB2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B2DA22C762FE200B5FB2A /* DashboardViewController.swift */; };
+		1F8B2DA62C764FB500B5FB2A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B2DA52C764FB500B5FB2A /* Utils.swift */; };
 		1FC7A2492C6DEBAE00D81ABB /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */; };
 		1FC7A24B2C6DEC5300D81ABB /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */; };
 		1FC7A24D2C6DECC700D81ABB /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */; };
@@ -79,6 +81,8 @@
 		1F817B7E2C6C89FE003020BB /* signInAndSignOut_featureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = signInAndSignOut_featureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F817B822C6C89FE003020BB /* signInAndSignOut_featureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInAndSignOut_featureUITests.swift; sourceTree = "<group>"; };
 		1F817B842C6C89FE003020BB /* signInAndSignOut_featureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInAndSignOut_featureUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1F8B2DA22C762FE200B5FB2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		1F8B2DA52C764FB500B5FB2A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -149,11 +153,12 @@
 		1F817B602C6C89FD003020BB /* signInAndSignOut_feature */ = {
 			isa = PBXGroup;
 			children = (
-				1F37D68A2C6F2D0D006179E9 /* Extension */,
 				1FC7A2472C6DE9BD00D81ABB /* AppDelegates */,
-				1FC7A2442C6DE92900D81ABB /* StoryBoard */,
 				1FC7A2432C6DE91900D81ABB /* UI */,
+				1FC7A2442C6DE92900D81ABB /* StoryBoard */,
+				1F8B2DA42C764EF600B5FB2A /* Utils */,
 				1FC7A2422C6DE90800D81ABB /* Constants */,
+				1F37D68A2C6F2D0D006179E9 /* Extension */,
 				1F817BCD2C6CA828003020BB /* Fonts */,
 				1F817B6A2C6C89FE003020BB /* Assets.xcassets */,
 				1F817B6F2C6C89FE003020BB /* Info.plist */,
@@ -194,6 +199,22 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		1F8B2DA12C762FB400B5FB2A /* DashboardController */ = {
+			isa = PBXGroup;
+			children = (
+				1F8B2DA22C762FE200B5FB2A /* DashboardViewController.swift */,
+			);
+			path = DashboardController;
+			sourceTree = "<group>";
+		};
+		1F8B2DA42C764EF600B5FB2A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1F8B2DA52C764FB500B5FB2A /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		1FC7A2422C6DE90800D81ABB /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +230,7 @@
 		1FC7A2432C6DE91900D81ABB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1F8B2DA12C762FB400B5FB2A /* DashboardController */,
 				1F37D6832C6F147E006179E9 /* SignUpController */,
 				1FC7A2462C6DE99600D81ABB /* LoginController */,
 				1FC7A2452C6DE97000D81ABB /* LaunchController */,
@@ -395,8 +417,10 @@
 				1F6BDC9F2C74AE9B00C2EFBF /* BaseViewController.swift in Sources */,
 				1F37D6892C6F1B18006179E9 /* SignUpViewController.swift in Sources */,
 				1FC7A24B2C6DEC5300D81ABB /* StringConstants.swift in Sources */,
+				1F8B2DA62C764FB500B5FB2A /* Utils.swift in Sources */,
 				1FD6C3DA2C746EB0004CC732 /* CustomTextField.swift in Sources */,
 				1F817B662C6C89FD003020BB /* LaunchViewController.swift in Sources */,
+				1F8B2DA32C762FE200B5FB2A /* DashboardViewController.swift in Sources */,
 				1FC7A24D2C6DECC700D81ABB /* Identifiers.swift in Sources */,
 				1F817B622C6C89FD003020BB /* AppDelegate.swift in Sources */,
 				1F37D68C2C6F2D37006179E9 /* Extention.swift in Sources */,

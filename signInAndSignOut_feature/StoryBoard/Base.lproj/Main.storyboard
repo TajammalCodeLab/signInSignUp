@@ -156,6 +156,13 @@
                                                     <constraint firstAttribute="width" constant="20" id="bUH-Om-OoV"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password_protection" translatesAutoresizingMaskIntoConstraints="NO" id="Xuc-xR-SuF">
+                                                <rect key="frame" x="283" y="25" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="SWd-0E-HRg"/>
+                                                    <constraint firstAttribute="width" constant="20" id="mrf-OF-jZX"/>
+                                                </constraints>
+                                            </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="70r-qA-vQH">
                                                 <rect key="frame" x="40" y="10" width="233" height="40"/>
                                                 <constraints>
@@ -164,13 +171,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password_protection" translatesAutoresizingMaskIntoConstraints="NO" id="Xuc-xR-SuF">
-                                                <rect key="frame" x="283" y="25" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="SWd-0E-HRg"/>
-                                                    <constraint firstAttribute="width" constant="20" id="mrf-OF-jZX"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -202,6 +202,9 @@
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButton:" destination="dIf-yV-3XL" eventType="touchUpInside" id="WxG-PH-qRT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -600,7 +603,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQo-MM-dg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2344.2748091603053" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="2373" y="352"/>
+        </scene>
+        <!--Dashboard View Controller-->
+        <scene sceneID="PbG-Um-xki">
+            <objects>
+                <viewController id="QqI-rf-6nI" customClass="DashboardViewController" customModule="signInAndSignOut_feature" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="zi7-XE-xH1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJq-Z2-AES">
+                                <rect key="frame" x="110" y="318" width="173" height="36"/>
+                                <color key="backgroundColor" red="0.80699415019999998" green="1" blue="0.65182516369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y1w-gL-AWd"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="y1w-gL-AWd" firstAttribute="bottom" secondItem="cJq-Z2-AES" secondAttribute="bottom" constant="514" id="2UQ-uC-rWM"/>
+                            <constraint firstItem="cJq-Z2-AES" firstAttribute="top" secondItem="y1w-gL-AWd" secondAttribute="top" constant="259" id="boY-68-IWu"/>
+                            <constraint firstItem="cJq-Z2-AES" firstAttribute="leading" secondItem="y1w-gL-AWd" secondAttribute="leading" constant="110" id="hKO-sm-oFy"/>
+                            <constraint firstItem="y1w-gL-AWd" firstAttribute="trailing" secondItem="cJq-Z2-AES" secondAttribute="trailing" constant="110" id="xMy-8U-G3d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="receivedUserNameLabel" destination="cJq-Z2-AES" id="VOq-B0-DH3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOv-9s-dge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3061.8320610687024" y="-3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6J1-Rp-0gp">
@@ -648,6 +684,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
