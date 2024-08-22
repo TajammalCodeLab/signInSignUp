@@ -8,7 +8,7 @@
 import UIKit
 
 class SignUpViewController: BaseViewController {
-    /// main card
+    // MARK: - IBOUTLET @IBOutlet -
     @IBOutlet weak var cardViewContainer: UIView!
     @IBOutlet weak var cardContainer: UIView!
     /// text fields
@@ -19,9 +19,7 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var cityNameTxtField: UITextField!
     @IBOutlet weak var addressTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
-    
-    
-    /// text field container
+    /// text field container view
     @IBOutlet weak var fullnameView: CustomTextField!
     @IBOutlet weak var emailView: CustomTextField!
     @IBOutlet weak var phoneNumberView: CustomTextField!
@@ -31,36 +29,72 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var passwordView: CustomTextField!
     
     
-    @IBOutlet weak var backtoLogin: UILabel!
-    
-    
-    
+    @IBOutlet weak var signUpBtn: UIButton!{
+        didSet{
+            signUpBtn.layer.cornerRadius = 8
+            signUpBtn.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var BacktowardLoginSC: UIButton!{
+        didSet{
+            let attributedString = NSAttributedString(string: "Login", attributes: [
+                .underlineStyle: NSUnderlineStyle.single.rawValue])
+            BacktowardLoginSC.setAttributedTitle( attributedString, for: .normal)
+        }
+    }
+
+    // MARK: - LIFE CYCLE -
     override func viewDidLoad() {
         super.viewDidLoad()
-        let attributedString = NSAttributedString(string: "Login", attributes: [
-                .underlineStyle: NSUnderlineStyle.single.rawValue
-            ])
-            
-            // Assign the attributed string to the label
-            backtoLogin.attributedText = attributedString
-        addingshadow()
+        
        updateUI()
         
         
         
     }
+    // MARK: - OVERRIDE FUNCTION -
+    override func viewWillAppear(_ animated: Bool){
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     
-    // MARKS -adding shadow to the card container-
-    func addingshadow() {
+    // MARK: - IBACTION @IBAction -
+    
+    @IBAction func backToLogInSC(_ sender: UIButton) {
+        directToSingInScreen()
         
+    }
+    
+    
+    // MARK: - METHODS -
+    
+    private func updateUI(){
+        /// Initialize CustomTextField with the outlet text field
+        self.updateTextField(parentView: fullnameView, label: "Full Name", textField: userFullNameField, isPassword: false)
+        self.updateTextField(parentView: emailView, label: "Email", textField: userEmailField, isPassword: false)
+        self.updateTextField(parentView: phoneNumberView, label: "Phone Number", textField: phoneNumberTxtField, isPassword: false)
+        self.updateTextField(parentView: ccompNameView, label: "Company Name", textField: conpNameTxtField, isPassword: false)
+        self.updateTextField(parentView: cityNameView, label: "City", textField: cityNameTxtField, isPassword: false)
+        self.updateTextField(parentView: addressView, label: "Address", textField: addressTxtField, isPassword: false)
+        self.updateTextField(parentView: passwordView, label: "Password", textField: passwordTxtField, isPassword: true)
+        addingshadow()
+    }
+    
+    private func directToSingInScreen(){
+        let vc = self.main.instantiateViewController(identifier: Identifiers.LOGIN_ID)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+         
+    private func addingshadow() {
         cardViewContainer.layer.cornerRadius = 10
         cardViewContainer.layer.shadowColor = UIColor.black.cgColor
         cardViewContainer.layer.shadowOpacity = 0.5
         cardViewContainer.layer.shadowOffset = CGSize(width: 0, height: 1)
         cardViewContainer.layer.shadowRadius = 3
-        
-        
         
         cardContainer.layer.cornerRadius = 10
         cardContainer.layer.shadowColor = UIColor.black.cgColor
@@ -69,18 +103,5 @@ class SignUpViewController: BaseViewController {
         cardContainer.layer.shadowRadius = 3
         //cardview.layer.shadowPath = UIBezierPath(roundedRect: cardview.bounds, cornerRadius: cardview.layer.cornerRadius).cgPath
     }
-    private func updateUI(){
-        /// Initialize CustomTextField with the outlet text field
-        
-        self.updateTextField(parentView: fullnameView, label: "Full Name", textField: userFullNameField, isPassword: false)
-        self.updateTextField(parentView: emailView, label: "Email", textField: userEmailField, isPassword: false)
-        self.updateTextField(parentView: phoneNumberView, label: "Phone Number", textField: phoneNumberTxtField, isPassword: false)
-        self.updateTextField(parentView: ccompNameView, label: "Company Name", textField: conpNameTxtField, isPassword: false)
-        self.updateTextField(parentView: cityNameView, label: "City", textField: cityNameTxtField, isPassword: false)
-        self.updateTextField(parentView: addressView, label: "Address", textField: addressTxtField, isPassword: false)
-        self.updateTextField(parentView: passwordView, label: "Password", textField: passwordTxtField, isPassword: true)
-        
-    }
-         
     
 }

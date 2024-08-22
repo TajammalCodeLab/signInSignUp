@@ -7,18 +7,41 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, MyDataSendingDelegateProtocol {
-
+class DashboardViewController: UIViewController, DataSendingProtocol {
+    
+    // MARK: - IBOUTLETS @IBOutlet -
     @IBOutlet weak var receivedUserNameLabel: UILabel!
+    @IBOutlet weak var receivedPasswordLabel: UILabel!
+    
+    // MARK: - VARIABLES  -
+    var receivedUserName: String? = ""
+    var receivedPassword: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        unwrappingTXT()
     }
-    func sendDataToFirstViewController(myData: String) {
-        self.receivedUserNameLabel.text = "\(myData)"
-        }
     
-
+    
+    // MARK: - OVERRIDE FUNCTION -
+    override func viewWillAppear(_ animated: Bool){
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    // MARK: - METHODS -
+    func sendDataToFirstViewController(userName: String, password: String) {
+        receivedUserName = userName
+        receivedPassword = password
+    }
+    private func unwrappingTXT(){
+        if let userName = receivedUserName, let password = receivedPassword {
+            receivedUserNameLabel.text = userName
+            receivedPasswordLabel.text = password
+        }
+    }
+    
+    
 }

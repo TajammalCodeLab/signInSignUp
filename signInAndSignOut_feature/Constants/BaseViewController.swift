@@ -9,6 +9,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    let main = Storyboards.Main
     override func viewDidLoad(){
         super.viewDidLoad()
     }

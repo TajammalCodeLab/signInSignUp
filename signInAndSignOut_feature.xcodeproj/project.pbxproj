@@ -31,6 +31,7 @@
 		1F817B852C6C89FE003020BB /* signInAndSignOut_featureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F817B842C6C89FE003020BB /* signInAndSignOut_featureUITestsLaunchTests.swift */; };
 		1F8B2DA32C762FE200B5FB2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B2DA22C762FE200B5FB2A /* DashboardViewController.swift */; };
 		1F8B2DA62C764FB500B5FB2A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B2DA52C764FB500B5FB2A /* Utils.swift */; };
+		1FB9C6972C77790000FCBEAD /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9C6962C77790000FCBEAD /* ForgetPasswordViewController.swift */; };
 		1FC7A2492C6DEBAE00D81ABB /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */; };
 		1FC7A24B2C6DEC5300D81ABB /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */; };
 		1FC7A24D2C6DECC700D81ABB /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */; };
@@ -83,6 +84,7 @@
 		1F817B842C6C89FE003020BB /* signInAndSignOut_featureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInAndSignOut_featureUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1F8B2DA22C762FE200B5FB2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		1F8B2DA52C764FB500B5FB2A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		1FB9C6962C77790000FCBEAD /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -215,6 +217,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		1FB9C6952C7778CC00FCBEAD /* ForgetPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1FB9C6962C77790000FCBEAD /* ForgetPasswordViewController.swift */,
+			);
+			path = ForgetPasswordViewController;
+			sourceTree = "<group>";
+		};
 		1FC7A2422C6DE90800D81ABB /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +240,7 @@
 		1FC7A2432C6DE91900D81ABB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1FB9C6952C7778CC00FCBEAD /* ForgetPasswordViewController */,
 				1F8B2DA12C762FB400B5FB2A /* DashboardController */,
 				1F37D6832C6F147E006179E9 /* SignUpController */,
 				1FC7A2462C6DE99600D81ABB /* LoginController */,
@@ -416,6 +427,7 @@
 				1FC7A2492C6DEBAE00D81ABB /* Storyboards.swift in Sources */,
 				1F6BDC9F2C74AE9B00C2EFBF /* BaseViewController.swift in Sources */,
 				1F37D6892C6F1B18006179E9 /* SignUpViewController.swift in Sources */,
+				1FB9C6972C77790000FCBEAD /* ForgetPasswordViewController.swift in Sources */,
 				1FC7A24B2C6DEC5300D81ABB /* StringConstants.swift in Sources */,
 				1F8B2DA62C764FB500B5FB2A /* Utils.swift in Sources */,
 				1FD6C3DA2C746EB0004CC732 /* CustomTextField.swift in Sources */,
