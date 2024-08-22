@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController, DataSendingProtocol {
+class DashboardViewController: UIViewController {
     
     // MARK: - IBOUTLETS @IBOutlet -
     @IBOutlet weak var receivedUserNameLabel: UILabel!
@@ -32,7 +32,7 @@ class DashboardViewController: UIViewController, DataSendingProtocol {
         self.navigationController?.navigationBar.isHidden = false
     }
     // MARK: - METHODS -
-    func sendDataToFirstViewController(userName: String, password: String) {
+    func sendDataToDashboardw(userName: String, password: String) {
         receivedUserName = userName
         receivedPassword = password
     }
@@ -42,6 +42,17 @@ class DashboardViewController: UIViewController, DataSendingProtocol {
             receivedPasswordLabel.text = password
         }
     }
+    
+    
+}
+
+// MARK: - Extention -
+extension DashboardViewController: DataSendingProtocol{
+    func sendDataToDashboard(userName: String, password: String) {
+        receivedUserName = userName
+        receivedPassword = password
+    }
+    
     
     
 }

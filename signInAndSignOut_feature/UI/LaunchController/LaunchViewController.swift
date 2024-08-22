@@ -5,12 +5,8 @@ import UIKit
 class LaunchViewController: BaseViewController {
     
     
-    
     // MARK: - OUTLETS @IBOutlet -
     @IBOutlet weak var progressBarHandler: UIProgressView!
-    
-    
-    
     
     // MARK: - Life cycle -
     override func viewDidLoad() {

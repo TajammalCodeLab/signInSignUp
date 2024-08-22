@@ -8,12 +8,6 @@
 import UIKit
 import Foundation
 
-
-protocol DataSendingProtocol {
-    func sendDataToFirstViewController(userName: String, password: String)
-}
-
-
 class LoginViewController: BaseViewController {
     
     // MARK: - OUTLETS @IBOutlet -
@@ -80,7 +74,6 @@ class LoginViewController: BaseViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         guard let email = userNameTextField.text, Utils.isValidEmail(email) else {
-            // Show an alert or message to the user that the email is invalid
             if userNameTextField.text == "" {
                 Utils.showAlert("Invalid Email", "Email is Empty", vc: self)
             } else {
@@ -90,7 +83,6 @@ class LoginViewController: BaseViewController {
         }
         
         guard let password = passwordTextField.text, Utils.isValidPassword(password) else {
-            // Show an alert or message to the user that the password is invalid
             if passwordTextField.text == "" {
                 Utils.showAlert("Invalid Password", "Password is Empty", vc: self)
             } else {
@@ -98,25 +90,27 @@ class LoginViewController: BaseViewController {
             }
             return 
         }
-        //directToSignUpScreen()
         directToDashboardScreen()
         
     }
     @IBAction func goToSignUpScBtn(){
         directToSignUpScreen()
     }
+    @IBAction func goToForgetScBtn(){
+        directToForgetScreen()
+    }
     
     
     
     // MARK: - METHODS -
     
-    private func updateUI(){                            // MARK: Upadting UI( Text field labels)
+    private func updateUI(){
         self.updateTextField(parentView: userView, label: "Username", textField: userNameTextField, isPassword: false)
         self.updateTextField(parentView: passwordView, label: "Password", textField: passwordTextField, isPassword: true)
         shadowadding()
     }
     
-    private func shadowadding() {                       // MARK: - Shadow Function adding shadow to container
+    private func shadowadding() {
         cardview.layer.cornerRadius = 10
         cardview.layer.shadowColor = UIColor.black.cgColor
         cardview.layer.shadowOpacity = 0.5
@@ -131,11 +125,14 @@ class LoginViewController: BaseViewController {
     }
     
     private func directToDashboardScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let dashboardVC = storyboard.instantiateViewController(identifier: Identifiers.DASHBOARD_ID) as? DashboardViewController {
-            dashboardVC.sendDataToFirstViewController(userName: userNameTextField.text ?? "Nothing", password: passwordTextField.text ?? "Nothing")
+        if let dashboardVC = self.main.instantiateViewController(identifier: Identifiers.DASHBOARD_ID) as? DashboardViewController {
+            dashboardVC.sendDataToDashboard(userName: userNameTextField.text ?? "Nothing", password: passwordTextField.text ?? "Nothing")
             self.navigationController?.pushViewController(dashboardVC, animated: true)
         }
+    }
+    private func directToForgetScreen(){
+        let vc = self.main.instantiateViewController(identifier: Identifiers.PASSWORD_ID)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     private func btnUnderline(btn: UIButton, btnTxt: String){

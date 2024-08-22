@@ -28,7 +28,6 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var addressView: CustomTextField!
     @IBOutlet weak var passwordView: CustomTextField!
     
-    
     @IBOutlet weak var signUpBtn: UIButton!{
         didSet{
             signUpBtn.layer.cornerRadius = 8
@@ -86,7 +85,7 @@ class SignUpViewController: BaseViewController {
     
     private func directToSingInScreen(){
         let vc = self.main.instantiateViewController(identifier: Identifiers.LOGIN_ID)
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.popToViewController(vc, animated: true) 
     }
          
     private func addingshadow() {

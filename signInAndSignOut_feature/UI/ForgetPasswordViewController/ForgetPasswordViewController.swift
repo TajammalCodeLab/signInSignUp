@@ -18,17 +18,21 @@ class ForgetPasswordViewController: BaseViewController {
             Submit.layer.masksToBounds = true
         }
     }
+    //MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         upDateUI()
     }
-    
-    // MARK: - Action -
-    @IBAction func goToSignUpScBtn(){
-        directToForgetpass()
+    // MARK: - OVERRIDE FUNCTIONS -
+    override func viewWillAppear(_ animated: Bool){
+        self.navigationController?.navigationBar.isHidden = false
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    // MARK: - IBACTION @IBAction -
     
     // MARK: - Methods -
     private func upDateUI(){

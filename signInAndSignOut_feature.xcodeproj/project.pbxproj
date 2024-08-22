@@ -32,6 +32,7 @@
 		1F8B2DA32C762FE200B5FB2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B2DA22C762FE200B5FB2A /* DashboardViewController.swift */; };
 		1F8B2DA62C764FB500B5FB2A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B2DA52C764FB500B5FB2A /* Utils.swift */; };
 		1FB9C6972C77790000FCBEAD /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9C6962C77790000FCBEAD /* ForgetPasswordViewController.swift */; };
+		1FB9C69C2C7784F300FCBEAD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9C69B2C7784F300FCBEAD /* Protocols.swift */; };
 		1FC7A2492C6DEBAE00D81ABB /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */; };
 		1FC7A24B2C6DEC5300D81ABB /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */; };
 		1FC7A24D2C6DECC700D81ABB /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */; };
@@ -85,6 +86,7 @@
 		1F8B2DA22C762FE200B5FB2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		1F8B2DA52C764FB500B5FB2A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1FB9C6962C77790000FCBEAD /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		1FB9C69B2C7784F300FCBEAD /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				1FC7A2442C6DE92900D81ABB /* StoryBoard */,
 				1F8B2DA42C764EF600B5FB2A /* Utils */,
 				1FC7A2422C6DE90800D81ABB /* Constants */,
+				1FB9C69A2C7784DE00FCBEAD /* Protocols */,
 				1F37D68A2C6F2D0D006179E9 /* Extension */,
 				1F817BCD2C6CA828003020BB /* Fonts */,
 				1F817B6A2C6C89FE003020BB /* Assets.xcassets */,
@@ -223,6 +226,14 @@
 				1FB9C6962C77790000FCBEAD /* ForgetPasswordViewController.swift */,
 			);
 			path = ForgetPasswordViewController;
+			sourceTree = "<group>";
+		};
+		1FB9C69A2C7784DE00FCBEAD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1FB9C69B2C7784F300FCBEAD /* Protocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		1FC7A2422C6DE90800D81ABB /* Constants */ = {
@@ -423,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB9C69C2C7784F300FCBEAD /* Protocols.swift in Sources */,
 				1F01D9C42C6CE6EB0072BE2C /* LoginViewController.swift in Sources */,
 				1FC7A2492C6DEBAE00D81ABB /* Storyboards.swift in Sources */,
 				1F6BDC9F2C74AE9B00C2EFBF /* BaseViewController.swift in Sources */,
