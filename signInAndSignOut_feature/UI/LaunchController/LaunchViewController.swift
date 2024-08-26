@@ -2,13 +2,34 @@ import UIKit
 
 
 
-class LaunchViewController: UIViewController {
+class LaunchViewController: BaseViewController {
     
+    
+    // MARK: - OUTLETS @IBOutlet -
     @IBOutlet weak var progressBarHandler: UIProgressView!
+    
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         startProgressBar()
     }
+    
+    
+    
+    
+    // MARK: - OVERRIDE FUNCTION -
+    override func viewWillAppear(_ animated: Bool){
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    
+    
+    // MARK: - METHODS -
     
     private func startProgressBar(){
         self.progressBarHandler.layer.sublayers?.forEach {$0.removeAllAnimations()}
@@ -19,19 +40,19 @@ class LaunchViewController: UIViewController {
             self.directToLoginScreen()
         }
     }
+    
+    
     private func directToLoginScreen(){
-        
-        
-        let loginVC = Storyboards.Main.instantiateViewController(withIdentifier: Identifiers.LOGIN_ID)
-        loginVC.modalPresentationStyle = .fullScreen
-        present(loginVC, animated: true, completion: nil)
-        
-        
-        /*
-        let SignUpVC = Storyboards.Main.instantiateViewController(withIdentifier: Identifiers.SIGNUP_ID)
-        SignUpVC.modalPresentationStyle = .fullScreen
-        present(SignUpVC, animated: true, completion: nil)*/
+        if UserDefaults.standard.bool(forKey: "IsLogin") == true{
+            let vc = self.main.instantiateViewController(identifier: Identifiers.DASHBOARD_ID)
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        else{
+            let vc = self.main.instantiateViewController(identifier: Identifiers.LOGIN_ID)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
+    
 }
 
 
