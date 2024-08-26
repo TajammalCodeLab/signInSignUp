@@ -90,6 +90,9 @@ class LoginViewController: BaseViewController {
             }
             return 
         }
+        UserDefaults.standard.setValue(true, forKey: "IsLogin")
+        UserDefaults.standard.set(userNameTextField.text, forKey: "email")
+        UserDefaults.standard.set(passwordTextField.text, forKey: "password")
         directToDashboardScreen()
         
     }
@@ -105,6 +108,7 @@ class LoginViewController: BaseViewController {
     // MARK: - METHODS -
     
     private func updateUI(){
+        
         self.updateTextField(parentView: userView, label: "Username", textField: userNameTextField, isPassword: false)
         self.updateTextField(parentView: passwordView, label: "Password", textField: passwordTextField, isPassword: true)
         shadowadding()
@@ -126,7 +130,7 @@ class LoginViewController: BaseViewController {
     
     private func directToDashboardScreen() {
         if let dashboardVC = self.main.instantiateViewController(identifier: Identifiers.DASHBOARD_ID) as? DashboardViewController {
-            dashboardVC.sendDataToDashboard(userName: userNameTextField.text ?? "Nothing", password: passwordTextField.text ?? "Nothing")
+            //dashboardVC.sendDataToDashboard(userName: userNameTextField.text ?? "Nothing", password: passwordTextField.text ?? "Nothing")
             self.navigationController?.pushViewController(dashboardVC, animated: true)
         }
     }
@@ -139,6 +143,9 @@ class LoginViewController: BaseViewController {
         let attributedString = NSAttributedString(string: btnTxt, attributes: [
             .underlineStyle: NSUnderlineStyle.single.rawValue])
         btn.setAttributedTitle( attributedString, for: .normal)
+    }
+    private func authUser(){
+        
     }
     
     

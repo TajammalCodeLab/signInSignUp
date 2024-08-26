@@ -43,9 +43,16 @@ class LaunchViewController: BaseViewController {
     
     
     private func directToLoginScreen(){
-        let vc = self.main.instantiateViewController(identifier: Identifiers.LOGIN_ID)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if UserDefaults.standard.bool(forKey: "IsLogin") == true{
+            let vc = self.main.instantiateViewController(identifier: Identifiers.DASHBOARD_ID)
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        else{
+            let vc = self.main.instantiateViewController(identifier: Identifiers.LOGIN_ID)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
+    
 }
 
 

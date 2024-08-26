@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: BaseViewController {
     
     // MARK: - IBOUTLETS @IBOutlet -
     @IBOutlet weak var receivedUserNameLabel: UILabel!
@@ -20,9 +20,14 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        unwrappingTXT()
+        //unwrappingTXT()
+        datafromDefualts()
     }
     
+    
+    @IBAction func authUser(_ sender: UIButton) {
+        directToLoginSC()
+    }
     
     // MARK: - OVERRIDE FUNCTION -
     override func viewWillAppear(_ animated: Bool){
@@ -32,19 +37,28 @@ class DashboardViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
     // MARK: - METHODS -
-    func sendDataToDashboardw(userName: String, password: String) {
-        receivedUserName = userName
-        receivedPassword = password
-    }
+    
     private func unwrappingTXT(){
         if let userName = receivedUserName, let password = receivedPassword {
             receivedUserNameLabel.text = userName
             receivedPasswordLabel.text = password
         }
     }
-    
+    private func datafromDefualts(){
+        receivedUserNameLabel.text = UserDefaults.standard.string(forKey: "email")
+        receivedPasswordLabel.text = UserDefaults.standard.string(forKey: "password")
+    }
+    private func directToLoginSC(){
+        UserDefaults.standard.set(false, forKey: "IsLogin")
+        UserDefaults.standard.removeObject(forKey: "email")
+        UserDefaults.standard.removeObject(forKey: "password")
+        
+        let vc = self.main.instantiateViewController(identifier: Identifiers.LOGIN_ID)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
+/*
 
 // MARK: - Extention -
 extension DashboardViewController: DataSendingProtocol{
@@ -55,4 +69,4 @@ extension DashboardViewController: DataSendingProtocol{
     
     
     
-}
+}*/
