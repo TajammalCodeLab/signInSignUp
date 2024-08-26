@@ -53,8 +53,8 @@ class DashboardViewController: BaseViewController {
         UserDefaults.standard.removeObject(forKey: "email")
         UserDefaults.standard.removeObject(forKey: "password")
         
-        let vc = self.main.instantiateViewController(identifier: Identifiers.LOGIN_ID)
-        self.navigationController?.pushViewController(vc, animated: true)
+        //let vc = self.main.instantiateViewController(identifier: Identifiers.LAUNCH_ID)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

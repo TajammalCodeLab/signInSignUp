@@ -12,4 +12,5 @@ class Identifiers{
     static let SIGNUP_ID = "SignUPscreenID"
     static let DASHBOARD_ID = "DashboardID"
     static let PASSWORD_ID = "ForgetpasswordID"
+    static let LAUNCH_ID = "LaunchscreenID"
 }
