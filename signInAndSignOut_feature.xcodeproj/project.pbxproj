@@ -19,6 +19,7 @@
 		1F0CBD342C6CC0BA0032E52A /* Outfit-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0CBD332C6CC0BA0032E52A /* Outfit-Thin.ttf */; };
 		1F37D6892C6F1B18006179E9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37D6882C6F1B18006179E9 /* SignUpViewController.swift */; };
 		1F37D68C2C6F2D37006179E9 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37D68B2C6F2D37006179E9 /* Extention.swift */; };
+		1F665D7A2C7CED90009681B3 /* Packages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F665D792C7CED90009681B3 /* Packages.swift */; };
 		1F6BDC9F2C74AE9B00C2EFBF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6BDC9E2C74AE9B00C2EFBF /* BaseViewController.swift */; };
 		1F817B622C6C89FD003020BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F817B612C6C89FD003020BB /* AppDelegate.swift */; };
 		1F817B642C6C89FD003020BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F817B632C6C89FD003020BB /* SceneDelegate.swift */; };
@@ -33,6 +34,9 @@
 		1F8B2DA62C764FB500B5FB2A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B2DA52C764FB500B5FB2A /* Utils.swift */; };
 		1FB9C6972C77790000FCBEAD /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9C6962C77790000FCBEAD /* ForgetPasswordViewController.swift */; };
 		1FB9C69C2C7784F300FCBEAD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9C69B2C7784F300FCBEAD /* Protocols.swift */; };
+		1FC1015E2C7CAC6900F9BFA7 /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC1015D2C7CAC6900F9BFA7 /* PackageCell.xib */; };
+		1FC1015F2C7CAC6900F9BFA7 /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC1015C2C7CAC6900F9BFA7 /* PackageCell.swift */; };
+		1FC101622C7CB8F500F9BFA7 /* PackagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC101612C7CB8F500F9BFA7 /* PackagesViewController.swift */; };
 		1FC7A2492C6DEBAE00D81ABB /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */; };
 		1FC7A24B2C6DEC5300D81ABB /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */; };
 		1FC7A24D2C6DECC700D81ABB /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */; };
@@ -69,6 +73,7 @@
 		1F0CBD332C6CC0BA0032E52A /* Outfit-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Thin.ttf"; sourceTree = "<group>"; };
 		1F37D6882C6F1B18006179E9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1F37D68B2C6F2D37006179E9 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		1F665D792C7CED90009681B3 /* Packages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packages.swift; sourceTree = "<group>"; };
 		1F6BDC9E2C74AE9B00C2EFBF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1F817B5E2C6C89FD003020BB /* signInAndSignOut_feature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = signInAndSignOut_feature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F817B612C6C89FD003020BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +92,9 @@
 		1F8B2DA52C764FB500B5FB2A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1FB9C6962C77790000FCBEAD /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		1FB9C69B2C7784F300FCBEAD /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		1FC1015C2C7CAC6900F9BFA7 /* PackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
+		1FC1015D2C7CAC6900F9BFA7 /* PackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
+		1FC101612C7CB8F500F9BFA7 /* PackagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewController.swift; sourceTree = "<group>"; };
 		1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -134,6 +142,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		1F665D782C7CED5B009681B3 /* Reusable Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F665D792C7CED90009681B3 /* Packages.swift */,
+			);
+			path = "Reusable Model";
+			sourceTree = "<group>";
+		};
 		1F817B552C6C89FD003020BB = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +173,7 @@
 		1F817B602C6C89FD003020BB /* signInAndSignOut_feature */ = {
 			isa = PBXGroup;
 			children = (
+				1F665D782C7CED5B009681B3 /* Reusable Model */,
 				1FC7A2472C6DE9BD00D81ABB /* AppDelegates */,
 				1FC7A2432C6DE91900D81ABB /* UI */,
 				1FC7A2442C6DE92900D81ABB /* StoryBoard */,
@@ -236,6 +253,24 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		1FC1015B2C7CAC1B00F9BFA7 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				1FC1015C2C7CAC6900F9BFA7 /* PackageCell.swift */,
+				1FC1015D2C7CAC6900F9BFA7 /* PackageCell.xib */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		1FC101602C7CB8BE00F9BFA7 /* PackagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1FC1015B2C7CAC1B00F9BFA7 /* Packages */,
+				1FC101612C7CB8F500F9BFA7 /* PackagesViewController.swift */,
+			);
+			path = PackagesViewController;
+			sourceTree = "<group>";
+		};
 		1FC7A2422C6DE90800D81ABB /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +286,7 @@
 		1FC7A2432C6DE91900D81ABB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1FC101602C7CB8BE00F9BFA7 /* PackagesViewController */,
 				1FB9C6952C7778CC00FCBEAD /* ForgetPasswordViewController */,
 				1F8B2DA12C762FB400B5FB2A /* DashboardController */,
 				1F37D6832C6F147E006179E9 /* SignUpController */,
@@ -399,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F817B6B2C6C89FE003020BB /* Assets.xcassets in Resources */,
+				1FC1015E2C7CAC6900F9BFA7 /* PackageCell.xib in Resources */,
 				1F0CBD242C6CC0640032E52A /* Outfit-Black.ttf in Resources */,
 				1F0CBD262C6CC0700032E52A /* Outfit-Bold.ttf in Resources */,
 				1F0CBD282C6CC07A0032E52A /* Outfit-ExtraBold.ttf in Resources */,
@@ -435,13 +472,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FB9C69C2C7784F300FCBEAD /* Protocols.swift in Sources */,
+				1FC101622C7CB8F500F9BFA7 /* PackagesViewController.swift in Sources */,
 				1F01D9C42C6CE6EB0072BE2C /* LoginViewController.swift in Sources */,
 				1FC7A2492C6DEBAE00D81ABB /* Storyboards.swift in Sources */,
 				1F6BDC9F2C74AE9B00C2EFBF /* BaseViewController.swift in Sources */,
 				1F37D6892C6F1B18006179E9 /* SignUpViewController.swift in Sources */,
 				1FB9C6972C77790000FCBEAD /* ForgetPasswordViewController.swift in Sources */,
 				1FC7A24B2C6DEC5300D81ABB /* StringConstants.swift in Sources */,
+				1F665D7A2C7CED90009681B3 /* Packages.swift in Sources */,
 				1F8B2DA62C764FB500B5FB2A /* Utils.swift in Sources */,
+				1FC1015F2C7CAC6900F9BFA7 /* PackageCell.swift in Sources */,
 				1FD6C3DA2C746EB0004CC732 /* CustomTextField.swift in Sources */,
 				1F817B662C6C89FD003020BB /* LaunchViewController.swift in Sources */,
 				1F8B2DA32C762FE200B5FB2A /* DashboardViewController.swift in Sources */,

@@ -84,7 +84,7 @@ class SignUpViewController: BaseViewController {
     }
     
     private func directToSingInScreen(){
-        self.navigationController?.popViewController(animated: true)
+        self.popBack()
     }
          
     private func addingshadow() {

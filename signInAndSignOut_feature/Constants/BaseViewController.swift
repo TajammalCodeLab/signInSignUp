@@ -27,4 +27,10 @@ class BaseViewController: UIViewController {
         customTextField.leadingAnchor.constraint(equalTo: parentView.leadingAnchor).isActive = true
         customTextField.trailingAnchor.constraint(equalTo: parentView.trailingAnchor).isActive = true
     }
+    func popBack(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    func popToRootViewController(){
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }
