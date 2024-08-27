@@ -2,23 +2,21 @@ import UIKit
 
 class PackageCell: UITableViewCell {
 
+    // MARK: - IBOutlets -
     @IBOutlet weak var packageNameLabel: UILabel!
-    
     @IBOutlet weak var imageback: UIImageView!
-    
-    
-    @IBOutlet weak var actionButton: UIButton! // Connect this to your button in the XIB
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var actionButton: UIButton!
 
-    var editAction: (() -> Void)?
-    var deleteAction: (() -> Void)?
+    // MARK: - Variables-
+    private var delegate: PackagesDelegates?
+    private var indexPath: IndexPath?
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         updateCellUI()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
 
     override func layoutSubviews() {
@@ -26,22 +24,23 @@ class PackageCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
     }
     
-
-    func updateData(for data:Packages) {
-        packageNameLabel.text = data.title
-        imageback.image = UIImage(named: data.image ?? "")
-    }
     
-    
-    
+    func updateData(for package: Packages) {
+            packageNameLabel.text = package.title
+        imageback.image = UIImage(named: package.image ?? "") // Assuming the Packages model has an image property
+        }
     private func updateCellUI() {
-        self.contentView.layer.cornerRadius = 15
-        self.contentView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 15
+        containerView.layer.masksToBounds = true
+        containerView.layer.borderWidth = 1
         contentView.layer.shadowColor = UIColor.black.cgColor
         contentView.layer.shadowOpacity = 0.3
         contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
         contentView.layer.shadowRadius = 4
+        contentView.layer.masksToBounds = false
+        contentView.backgroundColor = .clear
     }
+    
 
     @IBAction func actionButtonTapped(_ sender: UIButton) {
         showActionSheet()
@@ -52,12 +51,12 @@ class PackageCell: UITableViewCell {
 
         let actionSheet = UIAlertController(title: "Actions", message: "Choose an option", preferredStyle: .actionSheet)
 
-        let editAction = UIAlertAction(title: "Edit Title", style: .default) { _ in
-            self.editAction?()
+        let editAction = UIAlertAction(title: "Edit Title", style: .default) { action in
+            self.delegate?.didEdit(for: self.indexPath)
         }
 
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-            self.deleteAction?()
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            self.delegate?.didDelete(for: self.indexPath)
         }
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -70,6 +69,14 @@ class PackageCell: UITableViewCell {
     }
 }
 
+extension PackageCell: bindingDataDelegate{
+    func didSetDelegates(_ delegate: PackagesDelegates, with indexpath: IndexPath?) {
+        self.delegate = delegate
+        self.indexPath = indexpath
+    }
+    
+    
+}
 extension UITableViewCell {
     var parentViewController: UIViewController? {
         var parentResponder: UIResponder? = self

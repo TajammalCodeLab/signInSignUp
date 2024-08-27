@@ -13,4 +13,5 @@ class Identifiers{
     static let DASHBOARD_ID = "DashboardID"
     static let PASSWORD_ID = "ForgetpasswordID"
     static let LAUNCH_ID = "LaunchscreenID"
+    static let PACKAGESC_ID = "PackageID"
 }

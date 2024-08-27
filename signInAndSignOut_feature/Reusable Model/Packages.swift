@@ -10,6 +10,4 @@ import Foundation
 struct Packages{
     var title:String?
     let image:String?
-    
-    
 }
