@@ -30,9 +30,9 @@ class PackagesViewController: BaseViewController {
     private func updateDataArr() {
         tableViewPackages.register(UINib(nibName: "PackageCell", bundle: nil), forCellReuseIdentifier: "packagecell")
         packagesArr.append(Packages(title: "21 Days Umrah Package", image: "packageImage"))
-        packagesArr.append(Packages(title: "41 Days Umrah Package", image: "packageImage"))
+        packagesArr.append(Packages(title: "41 Days Umrah Package", image: "backgroundImage"))
         packagesArr.append(Packages(title: "61 Days Umrah Package", image: "packageImage"))
-        packagesArr.append(Packages(title: "81 Days Umrah Package", image: "packageImage"))
+        packagesArr.append(Packages(title: "81 Days Umrah Package", image: "backgroundImage"))
     }
     private func directTodashboard(){
         self.popBack()
@@ -51,12 +51,9 @@ extension PackagesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.didSetDelegates(self, with: indexPath)
         return cell
     }
-    /*
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            didDelete(for: indexPath) // Pass the entire IndexPath
-        }
-    }*/
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }
 
 extension PackagesViewController: PackagesDelegates{
@@ -69,7 +66,8 @@ extension PackagesViewController: PackagesDelegates{
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
             if let newTitle = alert.textFields?.first?.text, !newTitle.isEmpty {
                 self.packagesArr[indexpath!.row].title = newTitle
-                self.tableViewPackages.reloadRows(at: [IndexPath(row: indexpath!.row, section: 0)], with: .automatic)
+                self.tableViewPackages.reloadData()
+                
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -81,8 +79,9 @@ extension PackagesViewController: PackagesDelegates{
     
     
     func didDelete(for indexpath: IndexPath?) {
-        packagesArr.remove(at: indexpath!.row)
-        tableViewPackages.deleteRows(at: [IndexPath(row: indexpath!.row, section: 0)], with: .automatic)
+        packagesArr.remove(at: indexpath?.row ?? 0)
+        tableViewPackages.deleteRows(at: [IndexPath(row: indexpath?.row ?? 0, section: 0)], with: .automatic)
+        tableViewPackages.reloadData()
     }
 }
 

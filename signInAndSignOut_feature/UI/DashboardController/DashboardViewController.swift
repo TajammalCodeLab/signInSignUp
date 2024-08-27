@@ -58,8 +58,6 @@ class DashboardViewController: BaseViewController {
         UserDefaults.standard.set(false, forKey: "IsLogin")
         UserDefaults.standard.removeObject(forKey: "email")
         UserDefaults.standard.removeObject(forKey: "password")
-        
-        //let vc = self.main.instantiateViewController(identifier: Identifiers.LAUNCH_ID)
         self.navigationController?.popToRootViewController(animated: true)
     }
     private func directToPackages(){

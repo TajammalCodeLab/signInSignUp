@@ -53,7 +53,7 @@
                             <progressView opaque="NO" contentMode="left" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-N4-Def">
                                 <rect key="frame" x="121" y="326" width="150" height="2.6666666666666856"/>
                                 <color key="backgroundColor" systemColor="tableBackgroundColor"/>
-                                <color key="progressTintColor" systemColor="tintColor"/>
+                                <color key="progressTintColor" name="darkBlue"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore, Prepare, and Commence Your Umrah!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74R-YQ-RyJ">
                                 <rect key="frame" x="30" y="610.66666666666663" width="333" height="20.333333333333371"/>
@@ -294,23 +294,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginPageBackround" translatesAutoresizingMaskIntoConstraints="NO" id="8HJ-5G-Dpu">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="462"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="462"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="jif-19-9A9">
-                                <rect key="frame" x="95" y="69" width="200" height="100"/>
+                                <rect key="frame" x="96.666666666666686" y="69" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="G2G-aj-zL1"/>
                                     <constraint firstAttribute="width" constant="200" id="Uiw-hZ-73A"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGq-Xt-Uas" userLabel="card container">
-                                <rect key="frame" x="20" y="179" width="350" height="489"/>
+                                <rect key="frame" x="20" y="179" width="353" height="489"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3a8-E7-Fcn" userLabel="Card View Container scroll">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="489"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="489"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejH-So-VVm" userLabel="Content View container">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="700"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="700"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="muA-3y-bqd">
                                                         <rect key="frame" x="31" y="19" width="163" height="48"/>
@@ -320,7 +320,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EM8-5F-Bva" userLabel="Full name View">
-                                                        <rect key="frame" x="20" y="82" width="310" height="60"/>
+                                                        <rect key="frame" x="20" y="82" width="313" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.line" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YWz-5O-4Ws">
                                                                 <rect key="frame" x="10" y="26.333333333333329" width="20" height="17.666666666666671"/>
@@ -331,7 +331,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g0s-1f-Mei">
-                                                                <rect key="frame" x="40" y="10" width="260" height="40"/>
+                                                                <rect key="frame" x="40" y="10" width="263" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -348,7 +348,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCw-iL-SJY" userLabel="Email View">
-                                                        <rect key="frame" x="20" y="152" width="310" height="60"/>
+                                                        <rect key="frame" x="20" y="152" width="313" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Gdh-gv-tTp">
                                                                 <rect key="frame" x="10" y="27.333333333333336" width="20" height="16.000000000000007"/>
@@ -359,7 +359,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSf-D5-Won" userLabel="EmailText Field">
-                                                                <rect key="frame" x="40" y="10" width="260" height="40"/>
+                                                                <rect key="frame" x="40" y="10" width="263" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -376,7 +376,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmD-jf-W36" userLabel="Phone number View">
-                                                        <rect key="frame" x="20" y="222" width="310" height="60"/>
+                                                        <rect key="frame" x="20" y="222" width="313" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jK6-Qg-bC4">
                                                                 <rect key="frame" x="10" y="26.333333333333332" width="20" height="18.000000000000018"/>
@@ -387,7 +387,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4N-7T-rjp" userLabel="Phone numberText Field">
-                                                                <rect key="frame" x="40" y="10" width="260" height="40"/>
+                                                                <rect key="frame" x="40" y="10" width="263" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -404,7 +404,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8b-Ut-o9a" userLabel="Company name View">
-                                                        <rect key="frame" x="20" y="292" width="310" height="60"/>
+                                                        <rect key="frame" x="20" y="292" width="313" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eCH-7r-4Th">
                                                                 <rect key="frame" x="10" y="25.333333333333329" width="20" height="19.666666666666671"/>
@@ -415,7 +415,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Company" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmY-S9-bed" userLabel="Company Text Field">
-                                                                <rect key="frame" x="40" y="10" width="260" height="40"/>
+                                                                <rect key="frame" x="40" y="10" width="263" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -432,7 +432,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPJ-Jh-vkd" userLabel="City Name View">
-                                                        <rect key="frame" x="20" y="362" width="310" height="60"/>
+                                                        <rect key="frame" x="20" y="362" width="313" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="r9q-xB-vl2">
                                                                 <rect key="frame" x="10" y="26.000000000000007" width="20" height="18.33333333333335"/>
@@ -443,7 +443,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="htS-3Y-eYA" userLabel="city name Text Field">
-                                                                <rect key="frame" x="40" y="10" width="260" height="40"/>
+                                                                <rect key="frame" x="40" y="10" width="263" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -460,7 +460,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIO-Bx-75s" userLabel="Address View">
-                                                        <rect key="frame" x="20" y="432" width="310" height="60"/>
+                                                        <rect key="frame" x="20" y="432" width="313" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="k6d-Ew-3fj">
                                                                 <rect key="frame" x="10" y="24.666666666666661" width="20" height="19.333333333333339"/>
@@ -471,7 +471,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgq-cd-Mcu" userLabel="Adress Text Field">
-                                                                <rect key="frame" x="40" y="10" width="260" height="40"/>
+                                                                <rect key="frame" x="40" y="10" width="263" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -488,7 +488,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQ8-LS-bHf" userLabel="passsword View">
-                                                        <rect key="frame" x="20" y="502" width="310" height="60"/>
+                                                        <rect key="frame" x="20" y="502" width="313" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.shield" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rFN-U4-Wus">
                                                                 <rect key="frame" x="10" y="26" width="20" height="18.666666666666671"/>
@@ -499,7 +499,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6on-h6-TJp" userLabel="password Text Field">
-                                                                <rect key="frame" x="40" y="10" width="260" height="40"/>
+                                                                <rect key="frame" x="40" y="10" width="263" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -516,7 +516,7 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyZ-r1-CDK">
-                                                        <rect key="frame" x="100.66666666666667" y="620" width="148.66666666666663" height="45"/>
+                                                        <rect key="frame" x="101.66666666666669" y="620" width="150" height="45"/>
                                                         <color key="backgroundColor" name="yellow_button"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="9Vi-tY-6LS"/>
@@ -580,13 +580,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRi-eA-Emv">
-                                <rect key="frame" x="62.333333333333329" y="698" width="206.66666666666669" height="23"/>
+                                <rect key="frame" x="63.666666666666671" y="698" width="206.66666666666663" height="23"/>
                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW7-4Y-VYp" userLabel="Log in buttom">
-                                <rect key="frame" x="272" y="693" width="44" height="33"/>
+                                <rect key="frame" x="273.33333333333331" y="693" width="44" height="33"/>
                                 <fontDescription key="fontDescription" name="Outfit-Bold" family="Outfit" pointSize="16"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -681,7 +681,7 @@
                                     <constraint firstItem="wLc-Co-ud3" firstAttribute="leading" secondItem="y8Q-3E-JHj" secondAttribute="trailing" constant="10" id="oY7-Ia-3Lg"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="280" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JJw-ba-AV7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JJw-ba-AV7">
                                 <rect key="frame" x="0.0" y="130" width="393" height="688"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -740,6 +740,9 @@
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="authUser:" destination="QqI-rf-6nI" eventType="touchUpInside" id="bYg-3P-Gyn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yR-AT-w7B">
                                 <rect key="frame" x="121.66666666666669" y="491" width="150" height="45"/>
@@ -941,9 +944,6 @@
         </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
