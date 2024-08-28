@@ -14,4 +14,5 @@ class Identifiers{
     static let PASSWORD_ID = "ForgetpasswordID"
     static let LAUNCH_ID = "LaunchscreenID"
     static let PACKAGESC_ID = "PackageID"
+    static let PACKAGESC_CELL_ID = "packagecell"
 }
