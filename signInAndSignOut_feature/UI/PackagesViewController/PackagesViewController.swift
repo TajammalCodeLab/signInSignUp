@@ -30,10 +30,10 @@ class PackagesViewController: BaseViewController {
     // MARK: - Methods -
     private func updateDataArr() {
         tableViewPackages.register(UINib(nibName: "PackageCell", bundle: nil), forCellReuseIdentifier: Identifiers.PACKAGESC_CELL_ID)
-        packagesArr.append(Packages(title: "21 Days Umrah Package", image: "image_1"))
-        packagesArr.append(Packages(title: "41 Days Umrah Package", image: "image_2"))
-        packagesArr.append(Packages(title: "61 Days Umrah Package", image: "image_3"))
-        packagesArr.append(Packages(title: "81 Days Umrah Package", image: "image_4"))
+        packagesArr.append(Packages(title: "21 Days Umrah Package", image: "backgroundImage"))
+        packagesArr.append(Packages(title: "41 Days Umrah Package", image: "backgroundImage"))
+        packagesArr.append(Packages(title: "61 Days Umrah Package", image: "backgroundImage"))
+        packagesArr.append(Packages(title: "81 Days Umrah Package", image: "backgroundImage"))
     }
     private func directTodashboard(){
         self.popBack()
