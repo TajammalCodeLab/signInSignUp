@@ -18,7 +18,7 @@ class PackageCell: UITableViewCell {
     private var delegate: PackagesDelegates?
     private var indexPath: IndexPath?
     
-    
+    // MARK: - Life cycle -
     override func awakeFromNib() {
         super.awakeFromNib()
         updateCellUI()
@@ -29,21 +29,15 @@ class PackageCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15))
     }
     
+    // MARK: - IBAction -
+    @IBAction func actionButtonTapped(_ sender: UIButton) {
+        delegate?.didShowAlert(for: indexPath)
+    }
+    
+    
     // MARK: - OBJ -
     @objc func imagePicker(){
-        let imagePickerAlter = UIAlertController(title: "Choose an Image", message: "Select image from", preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
-            /// Code
-        }
-        let photoAction = UIAlertAction(title: "Photos", style: .default) { (action) in
-            /// Code
-            }
-        let cencleAction = UIAlertAction(title: "Cencle", style: .cancel)
-        imagePickerAlter.addAction(cameraAction)
-        imagePickerAlter.addAction(photoAction)
-        imagePickerAlter.addAction(cencleAction)
-      
-        
+        delegate?.didImagePicker(imagePackage: imageback)
     }
     
     // MARK: Methods
@@ -65,11 +59,6 @@ class PackageCell: UITableViewCell {
         contentView.backgroundColor = .clear
     }
     
-    // MARK: - IBAction -
-    @IBAction func actionButtonTapped(_ sender: UIButton) {
-        delegate?.didShowAlert(for: indexPath)
-    }
-    
 }
 
 extension PackageCell: bindingDataDelegate{
@@ -79,6 +68,3 @@ extension PackageCell: bindingDataDelegate{
     }
 }
 
-extension PackageCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
-}

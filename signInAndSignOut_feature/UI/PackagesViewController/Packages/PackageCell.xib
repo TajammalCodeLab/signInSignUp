@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tS-hJ-Pj3" userLabel="containerView">
                         <rect key="frame" x="0.0" y="10" width="426" height="243"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="packageImage" translatesAutoresizingMaskIntoConstraints="NO" id="YdR-Tz-l5N">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="YdR-Tz-l5N">
                                 <rect key="frame" x="5" y="43" width="416" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="xVj-tV-FQR"/>
@@ -81,7 +81,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="packageImage" width="315.33334350585938" height="158.33332824707031"/>
+        <image name="image_1" width="3024" height="4032"/>
         <namedColor name="darkBlue">
             <color red="0.071000002324581146" green="0.20399999618530273" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

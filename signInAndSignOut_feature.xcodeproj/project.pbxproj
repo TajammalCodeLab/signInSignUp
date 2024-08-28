@@ -178,6 +178,7 @@
 				1FC7A2442C6DE92900D81ABB /* StoryBoard */,
 				1F8B2DA42C764EF600B5FB2A /* Utils */,
 				1F665D782C7CED5B009681B3 /* Reusable Model */,
+				1FFA413D2C7F2F6000664115 /* Common Views */,
 				1FC7A2422C6DE90800D81ABB /* Constants */,
 				1FB9C69A2C7784DE00FCBEAD /* Protocols */,
 				1F37D68A2C6F2D0D006179E9 /* Extension */,
@@ -277,8 +278,6 @@
 				1FC7A2482C6DEBAE00D81ABB /* Storyboards.swift */,
 				1FC7A24A2C6DEC5300D81ABB /* StringConstants.swift */,
 				1FC7A24C2C6DECC700D81ABB /* Identifiers.swift */,
-				1FD6C3D92C746EB0004CC732 /* CustomTextField.swift */,
-				1F6BDC9E2C74AE9B00C2EFBF /* BaseViewController.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -286,6 +285,7 @@
 		1FC7A2432C6DE91900D81ABB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1FFA413E2C7F2FB900664115 /* Base Controller */,
 				1FC101602C7CB8BE00F9BFA7 /* PackagesViewController */,
 				1FB9C6952C7778CC00FCBEAD /* ForgetPasswordViewController */,
 				1F8B2DA12C762FB400B5FB2A /* DashboardController */,
@@ -328,6 +328,22 @@
 				1F817B612C6C89FD003020BB /* AppDelegate.swift */,
 			);
 			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		1FFA413D2C7F2F6000664115 /* Common Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FD6C3D92C746EB0004CC732 /* CustomTextField.swift */,
+			);
+			path = "Common Views";
+			sourceTree = "<group>";
+		};
+		1FFA413E2C7F2FB900664115 /* Base Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F6BDC9E2C74AE9B00C2EFBF /* BaseViewController.swift */,
+			);
+			path = "Base Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

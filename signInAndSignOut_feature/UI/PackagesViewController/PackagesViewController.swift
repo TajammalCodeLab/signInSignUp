@@ -7,6 +7,7 @@ class PackagesViewController: BaseViewController {
     
     // MARK: - Variables -
     var packagesArr = [Packages]()
+    var currentImage: UIImageView?
     
     // MARK: - Life Cycle -
     override func viewDidLoad() {
@@ -29,10 +30,10 @@ class PackagesViewController: BaseViewController {
     // MARK: - Methods -
     private func updateDataArr() {
         tableViewPackages.register(UINib(nibName: "PackageCell", bundle: nil), forCellReuseIdentifier: Identifiers.PACKAGESC_CELL_ID)
-        packagesArr.append(Packages(title: "21 Days Umrah Package", image: "packageImage"))
-        packagesArr.append(Packages(title: "41 Days Umrah Package", image: "backgroundImage"))
-        packagesArr.append(Packages(title: "61 Days Umrah Package", image: "packageImage"))
-        packagesArr.append(Packages(title: "81 Days Umrah Package", image: "backgroundImage"))
+        packagesArr.append(Packages(title: "21 Days Umrah Package", image: "image_1"))
+        packagesArr.append(Packages(title: "41 Days Umrah Package", image: "image_2"))
+        packagesArr.append(Packages(title: "61 Days Umrah Package", image: "image_3"))
+        packagesArr.append(Packages(title: "81 Days Umrah Package", image: "image_4"))
     }
     private func directTodashboard(){
         self.popBack()
@@ -102,6 +103,49 @@ extension PackagesViewController: PackagesDelegates{
         actionSheet.addAction(cancelAction)
         self.present(actionSheet, animated: true, completion: nil)
         
+    }
+    
+}
+extension PackagesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func didImagePicker(imagePackage: UIImageView) {
+        currentImage = imagePackage
+        let imagePickerAlter = UIAlertController(title: "Choose an Image", message: "Select image from", preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+            /// Code
+            self.showImagePicker(selectedSource: .camera)
+        }
+        let photoAction = UIAlertAction(title: "Photos", style: .default) { (action) in
+            /// Code
+            self.showImagePicker(selectedSource: .photoLibrary)
+        }
+        let cencleAction = UIAlertAction(title: "Cencle", style: .cancel)
+        imagePickerAlter.addAction(cameraAction)
+        imagePickerAlter.addAction(photoAction)
+        imagePickerAlter.addAction(cencleAction)
+        self.present(imagePickerAlter, animated: true, completion: nil)
+        
+    }
+    
+    func showImagePicker(selectedSource : UIImagePickerController.SourceType){
+        guard UIImagePickerController.isSourceTypeAvailable(selectedSource) else{
+            print("No image source found")
+            return
+        }
+        let imagepickerController = UIImagePickerController()
+        imagepickerController.delegate = self
+        imagepickerController.sourceType = selectedSource
+        imagepickerController.allowsEditing = false
+        self.present(imagepickerController, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.originalImage] as? UIImage {
+            // access here
+            if let imagePackage = self.currentImage {
+                imagePackage.image = selectedImage
+            }
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }
