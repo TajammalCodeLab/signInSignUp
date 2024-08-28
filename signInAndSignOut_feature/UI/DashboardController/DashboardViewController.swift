@@ -25,9 +25,6 @@ class DashboardViewController: BaseViewController {
     }
     
     
-    @IBAction func authUser(_ sender: UIButton) {
-        directToLoginSC()
-    }
     
     // MARK: - OVERRIDE FUNCTION -
     override func viewWillAppear(_ animated: Bool){
@@ -36,6 +33,15 @@ class DashboardViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
+    // MARK: - IBActions -
+    @IBAction func authUser(_ sender: UIButton) {
+        directToLoginSC()
+    }
+    
+    @IBAction func directToPackages(_ sender: Any) {
+        directToPackages()
+    }
+    
     // MARK: - METHODS -
     
     private func unwrappingTXT(){
@@ -52,9 +58,11 @@ class DashboardViewController: BaseViewController {
         UserDefaults.standard.set(false, forKey: "IsLogin")
         UserDefaults.standard.removeObject(forKey: "email")
         UserDefaults.standard.removeObject(forKey: "password")
-        
-        //let vc = self.main.instantiateViewController(identifier: Identifiers.LAUNCH_ID)
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    private func directToPackages(){
+        let vc = self.main.instantiateViewController(identifier: Identifiers.PACKAGESC_ID)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

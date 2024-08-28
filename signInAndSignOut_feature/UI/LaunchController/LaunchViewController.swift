@@ -11,7 +11,7 @@ class LaunchViewController: BaseViewController {
     // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        startProgressBar()
+        
     }
     
     
@@ -19,8 +19,10 @@ class LaunchViewController: BaseViewController {
     
     // MARK: - OVERRIDE FUNCTION -
     override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        startProgressBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
