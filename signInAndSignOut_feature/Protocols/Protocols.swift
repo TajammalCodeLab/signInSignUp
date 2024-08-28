@@ -13,8 +13,11 @@ protocol DataSendingProtocol {
 protocol PackagesDelegates {
     func didEdit(for indexpath:IndexPath?)
     func didDelete(for indexpath:IndexPath?)
+    func didShowAlert(for indexPath: IndexPath?)
 }
 
 protocol bindingDataDelegate {
     func didSetDelegates(_ delegate: PackagesDelegates, with indexpath:IndexPath?)
 }
+
+

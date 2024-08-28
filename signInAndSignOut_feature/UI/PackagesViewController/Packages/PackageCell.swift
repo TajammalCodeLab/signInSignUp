@@ -19,7 +19,6 @@ class PackageCell: UITableViewCell {
     private var indexPath: IndexPath?
     
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         updateCellUI()
@@ -30,11 +29,6 @@ class PackageCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15))
     }
     
-    // MARK: - IBAction -
-    
-    @IBAction func actionButtonTapped(_ sender: UIButton) {
-        showActionSheet()
-    }
     // MARK: - OBJ -
     @objc func imagePicker(){
         let imagePickerAlter = UIAlertController(title: "Choose an Image", message: "Select image from", preferredStyle: .actionSheet)
@@ -52,12 +46,10 @@ class PackageCell: UITableViewCell {
         
     }
     
-    
-    // MARK: - Methods -
-    
+    // MARK: Methods
     func updateData(for package: Packages) {
         packageNameLabel.text = package.title
-        imageback.image = UIImage(named: package.image ?? "") // Assuming the Packages model has an image property
+        imageback.image = UIImage(named: package.image ?? "")
     }
     
     private func updateCellUI() {
@@ -73,30 +65,13 @@ class PackageCell: UITableViewCell {
         contentView.backgroundColor = .clear
     }
     
-    private func showActionSheet() {
-        guard let parentVC = self.parentViewController else { return }
-        
-        let actionSheet = UIAlertController(title: "Actions", message: "Choose an option", preferredStyle: .actionSheet)
-        
-        let editAction = UIAlertAction(title: "Edit Title", style: .default) { action in
-            self.delegate?.didEdit(for: self.indexPath)
-        }
-        
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
-            self.delegate?.didDelete(for: self.indexPath)
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        actionSheet.addAction(editAction)
-        actionSheet.addAction(deleteAction)
-        actionSheet.addAction(cancelAction)
-        
-        parentVC.present(actionSheet, animated: true, completion: nil)
+    // MARK: - IBAction -
+    @IBAction func actionButtonTapped(_ sender: UIButton) {
+        delegate?.didShowAlert(for: indexPath)
     }
+    
 }
 
-// MARK: - EXTENSION -
 extension PackageCell: bindingDataDelegate{
     func didSetDelegates(_ delegate: PackagesDelegates, with indexpath: IndexPath?) {
         self.delegate = delegate
@@ -106,18 +81,4 @@ extension PackageCell: bindingDataDelegate{
 
 extension PackageCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-}
-
-
-extension UITableViewCell {
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
-    }
 }

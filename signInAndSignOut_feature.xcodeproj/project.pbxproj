@@ -173,11 +173,11 @@
 		1F817B602C6C89FD003020BB /* signInAndSignOut_feature */ = {
 			isa = PBXGroup;
 			children = (
-				1F665D782C7CED5B009681B3 /* Reusable Model */,
 				1FC7A2472C6DE9BD00D81ABB /* AppDelegates */,
 				1FC7A2432C6DE91900D81ABB /* UI */,
 				1FC7A2442C6DE92900D81ABB /* StoryBoard */,
 				1F8B2DA42C764EF600B5FB2A /* Utils */,
+				1F665D782C7CED5B009681B3 /* Reusable Model */,
 				1FC7A2422C6DE90800D81ABB /* Constants */,
 				1FB9C69A2C7784DE00FCBEAD /* Protocols */,
 				1F37D68A2C6F2D0D006179E9 /* Extension */,
